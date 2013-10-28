@@ -19,7 +19,7 @@ Read more about the different log levels availible at the bottom of this readme.
 
 
 ### Functions for accessing the logs
-
+-----
 #### getEntry(__id__)
 
 Get entry based on id.
@@ -36,7 +36,6 @@ canary.debug('Message #1');
 canary.info('Message #2');
 canary.warning('Message #3');
 canary.getEntry(1); // Will return Object {id: 1, type: "info", msg: "Message #2"}
-
 ````
 
 -----
@@ -54,7 +53,6 @@ canary.debug('Message #1');
 canary.info('Message #2');
 canary.warning('Message #3');
 canary.getEntry(2); // Will return Object {id: 2, type: "warning", msg: "Message #3"}
-
 ````
 
 -----
@@ -176,7 +174,6 @@ window.menulog = new CanaryFactory.create('Menu Log');
 
 // Creates new collection with several custom values.
 window.menulog = new CanaryFactory.create({name: 'Menu Log', level: 200, console: true});
-
 ```
 
 ### Factory methods
@@ -243,7 +240,6 @@ canary.on("change:name", function(){
 });
 
 canary.get('logCollection').on("add", function(model){
-    console.log(model);
     alert('A log entry was written and stored. With the message: '+model.get('msg'));
 });
 
