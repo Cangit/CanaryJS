@@ -22,7 +22,6 @@ var CanaryJS = Backbone.Model.extend({
                 this.get('debugCollection').add([{id: this.get('numberOfEntries'), type: type, msg: msg}]);
                 obj = '';
             } else {
-                console.log('stuff');
                 this.get('debugCollection').add([{id: this.get('numberOfEntries'), type: type, msg: msg, obj: obj}]);
             }
             if (this.get('console') == true) {
