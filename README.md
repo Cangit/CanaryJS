@@ -3,22 +3,6 @@ CanaryJS
 
 Basic logging tools.
 
-Log Levels
-----------
-
-- **DEBUG** (100)
-
-- **INFO** (200)
-
-- **NOTICE** (250)
-
-- **WARNING** (300)
-
-- **ERROR** (400)
-
-- **CRITICAL** (500)
-
-
 Usage
 -----
 
@@ -65,15 +49,31 @@ canary.get('level'); // Returns current logging level (int).
 
 - **name** ('CanaryJS'), Will be attached to log entries when dumping/flushing.
 
-- **level** (0), Raise this to exclude logging entries with a lower level. (See the log levels at the top of this readme.)
+- **level** (0), Raise this to exclude logging entries with a lower level. (See the log levels at the bottom of this readme.)
 
 - **console** (false), If true, CanaryJS will write a copy of the entry to the console immediately when a new entry is added.
 
 
-You can pass on default values when you create/initiale a log collection, or change them with the set() method later.
+You can pass on default values when you create/initiate a log collection, or change them with the set() method later.
 
 ```js
 window.datatablelog = new CanaryJS({name: 'Data table', level: 200, console: true});
 
 datatablelog.set('level', 400);
 ```
+
+Log Levels
+----------
+
+- **DEBUG** (100)
+
+- **INFO** (200)
+
+- **NOTICE** (250)
+
+- **WARNING** (300)
+
+- **ERROR** (400)
+
+- **CRITICAL** (500)
+
