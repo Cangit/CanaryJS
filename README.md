@@ -1,7 +1,7 @@
 CanaryJS
 =====
 
-Basic logging tools.
+Basic logging tools. Dependent on [backbone.js](http://backbonejs.org/).
 
 Usage
 -----
