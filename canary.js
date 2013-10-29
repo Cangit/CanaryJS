@@ -1,7 +1,7 @@
 /*!
  * Canary.js debug functions for your backbone.js powered applications
  * Based on RFC 5424 and Seldaek/monolog
- *
+ * v0.2.0
  */
 
 var CanaryJS = Backbone.Model.extend({
