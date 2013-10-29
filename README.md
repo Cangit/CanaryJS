@@ -15,7 +15,23 @@ canary.notice('Your notice.');
 // loglevel( string, object ) Pass in context.
 canary.debug('The message', {context: this, value: '...'});
 ```
-Read more about the different log levels availible at the bottom of this readme.
+See all the availible log levels below
+
+Log Levels
+----------
+
+- **debug** (100)
+
+- **info** (200)
+
+- **notice** (250)
+
+- **warning** (300)
+
+- **error** (400)
+
+- **critical** (500)
+
 
 
 ### Functions for accessing the logs
@@ -79,7 +95,7 @@ canary.dump();
 
 -----
 
-#### flush(__heading__)
+#### flush( heading )
 
 Dump all entries to the console and reset the log. Similiar to calling dump() and then reset()
 
@@ -110,7 +126,7 @@ canary.reset();
 var entriesmade = canary.get('numberOfEntries'); // Returns number of entries made.
 var name = canary.get('name'); // Returns name of collection.
 var console = canary.get('console'); // Returns true/false based on current setting.
-var level = canary.get('level'); // Returns current logging level (__int__).
+var level = canary.get('level'); // Returns current logging level (int).
 ````
 
 -----
@@ -129,9 +145,9 @@ canary.set('level', 500);
 
 ### Default values
 
-- **name** ('CanaryJS'), Will be attached to log entries when dumping/flushing.
+- **name** ('CanaryJS'), Will be attached to log entries when dumping/flushing or exporting.
 
-- **level** (0), Raise this to exclude log entries with a lower level. (See the log levels at the bottom of this readme.)
+- **level** (0), Raise this to exclude writing log entries with a lower level. ([Read more about log levels](#log-levels))
 
 - **console** (false), If true, CanaryJS will write a copy of the entry to the console immediately when a new entry is added.
 
@@ -191,9 +207,9 @@ CanaryFactory.flush();
 
 ### Extra
 
-If you want to create a log collection that is completely seperated from the other log collections you can do so by interacting directly with the CanaryJs model:
+If you want to create a log collection that is completely seperated from the other log collections you can do so by interacting directly with the CanaryJS model:
 ```js
-var loneWolfLog = new CanaryJs();
+var loneWolfLog = new CanaryJS();
 ````
 Naturally, the CanaryFactory methods will not interact with log collections created this way.
 
@@ -218,19 +234,3 @@ canary.set('name', 'User action log');
 canary.notice('Writing a log entry.');
 
 ````
-
-Log Levels
-----------
-
-- **DEBUG** (100)
-
-- **INFO** (200)
-
-- **NOTICE** (250)
-
-- **WARNING** (300)
-
-- **ERROR** (400)
-
-- **CRITICAL** (500)
-
