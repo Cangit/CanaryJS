@@ -20,12 +20,9 @@ Read more about the different log levels availible at the bottom of this readme.
 
 ### Functions for accessing the logs
 -----
-#### getEntry(__id__)
+#### getEntry( id )
 
 Get entry based on id.
-
-**Parameters:**
- - id : integer
 
 **Returns:**
  - Entry object
@@ -71,15 +68,9 @@ var logexport = canary.export();
 
 -----
 
-#### dump(__heading__)
+#### dump( heading )
 
 Dump all entries to the console in a ordered list.
-
-**Parameters:**
- - __optional__ heading : string
-
-**Returns:**
- - '/dump' : string
 
 **Example:**
 ```js
@@ -92,12 +83,6 @@ canary.dump();
 
 Dump all entries to the console and reset the log. Similiar to calling dump() and then reset()
 
-**Parameters:**
- - __optional__ heading : string
-
-**Returns:**
- - '/flush' : string
-
 **Example:**
 ```js
 canary.flush();
@@ -109,9 +94,6 @@ canary.flush();
 
 Removes all entries from the log.
 
-**Returns:**
- - true : boolean
-
 **Example:**
 ```js
 canary.reset();
@@ -121,29 +103,19 @@ canary.reset();
 
 ### Accessing model properties
 
-#### get(__param__)
-
-**Parameters:**
- - param : string
-
-**Returns:**
- - Mixed
+#### get( param )
 
 **Example:**
 ```js
-canary.get('numberOfEntries'); // Returns number of entries made.
-canary.get('name'); // Returns name of collection.
-canary.get('console'); // Returns true/false based on current setting.
-canary.get('level'); // Returns current logging level (__int__).
+var entriesmade = canary.get('numberOfEntries'); // Returns number of entries made.
+var name = canary.get('name'); // Returns name of collection.
+var console = canary.get('console'); // Returns true/false based on current setting.
+var level = canary.get('level'); // Returns current logging level (__int__).
 ````
 
 -----
 
-#### set(__param__, __value__)
-
-**Parameters:**
- - param : string
- - value : mixed
+#### set( param, value )
 
 **Example:**
 ```js
@@ -198,9 +170,6 @@ var logexport = CanaryFactory.export();
 
 Dump all entries in all collections to the console.
 
-**Returns:**
- - '/dump' : string
-
 **Example:**
 ```js
 CanaryFactory.dump();
@@ -211,9 +180,6 @@ CanaryFactory.dump();
 #### flush()
 
 Dump all entries in all collections to the console and reset/whipe clean all the log collections.
-
-**Returns:**
- - '/flush' : string
 
 **Example:**
 ```js
@@ -227,7 +193,7 @@ CanaryFactory.flush();
 
 If you want to create a log collection that is completely seperated from the other log collections you can do so by interacting directly with the CanaryJs model:
 ```js
-window.loneWolfLog = new CanaryJs();
+var loneWolfLog = new CanaryJs();
 ````
 Naturally, the CanaryFactory methods will not interact with log collections created this way.
 
@@ -245,9 +211,11 @@ canary.get('logCollection').on("add", function(model){
 
 // ...
 
-canary.set('name', 'User action log'); // This will trigger the 'change:name' callback function.
+// This will trigger the 'change:name' callback function.
+canary.set('name', 'User action log');
 
-canary.notice('Writing a log entry.'); // This will trigger the 'add' callback function.
+// This will trigger the 'add' callback function.
+canary.notice('Writing a log entry.');
 
 ````
 
