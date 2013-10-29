@@ -232,7 +232,7 @@ canary.set('name', 'User action log');
 
 // This will trigger the 'add' callback function.
 canary.notice('Writing a log entry.');
-
+````
 
 License
 ----------
