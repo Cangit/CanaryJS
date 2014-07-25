@@ -65,7 +65,7 @@ Get the last entry.
 canary.debug('Message #1');
 canary.info('Message #2');
 canary.warning('Message #3');
-canary.getEntry(2); // Will return Object {id: 2, type: "warning", msg: "Message #3"}
+canary.getLastEntry(); // Will return Object {id: 2, type: "warning", msg: "Message #3"}
 ````
 
 -----
@@ -136,7 +136,7 @@ var level = canary.get('level'); // Returns current logging level (int).
 **Example:**
 ```js
 canary.set('name', 'Le Log');
-canary.set('console', true); 
+canary.set('console', true);
 canary.set('level', 500);
 ````
 
